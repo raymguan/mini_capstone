@@ -1,7 +1,7 @@
 class Api::ProductsController < ApplicationController
+  before_action :authenticate_user
 
   def index
-    @products = Product.all
 
     nam_search = params[:search]
 
@@ -14,8 +14,13 @@ class Api::ProductsController < ApplicationController
     else 
       @products = @products.order(id: :asc)
     end
-
-    render "index.json.jbuilder"
+  
+  if current_user
+      @products = current_user.products
+      render "index.json.jbuilder"
+    else
+      render json: []
+    end
   end
 
   def show
