@@ -1,5 +1,3 @@
-json.id @product.id
-json.name @product.name
-json.price @product.price
-json.image_url @product.image_url
-json.description @product.description
+ #creates single line of code, benefits: updates and values, no more need to update two 
+json.partial! @products, partial: 'product', as: :product
+

@@ -11,3 +11,5 @@ broom = Product.create(name:"Blue Broom", price: 5, image_url:"https://mini_caps
 fork = Product.create(name:"Silver Fork", price: 1, image_url:"https://mini_capstone/silverfork.jpg", description: "This is a nice silver fork.")
 
 
+
+
